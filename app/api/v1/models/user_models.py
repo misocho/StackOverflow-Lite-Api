@@ -3,6 +3,11 @@ users = [
         "username" : "misocho",
         "email" : "misochobrian@gmail.com",
         "password" : "scorpion234"
+    },
+    {
+        "username" : "ben",
+        "email" : "karanjaben@gmail.com",
+        "password": "dsjknvujfnuihdf"
     }
 ]
 
