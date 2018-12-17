@@ -19,3 +19,8 @@ def signup_user():
 
     res = jsonify(user.register_user(email, username, password))
     return res
+
+@auth.route('/user/<username>', methods = ['GET'])
+def get_theUser(username):
+    res = make_response(jsonify(user.get_user_data(username)))
+    return res
