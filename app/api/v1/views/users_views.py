@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, request, jsonify
+from flask import Flask, Blueprint, request, jsonify, make_response
 
 from ..models import user_models
 
@@ -18,4 +18,9 @@ def signup_user():
     password = user_data.get('password').strip()
 
     res = jsonify(user.register_user(email, username, password))
+    return res
+
+@auth.route('/user/<username>', methods = ['GET'])
+def get_theUser(username):
+    res = make_response(jsonify(user.get_user_data(username)))
     return res
