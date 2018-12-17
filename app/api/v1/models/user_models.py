@@ -1,4 +1,10 @@
-users = []
+users = [
+    {
+        "username" : "misocho",
+        "email" : "misochobrian@gmail.com",
+        "password" : "scorpion234"
+    }
+]
 
 class User_Accounts(object):
     """  Creates user accounts model """
@@ -16,3 +22,7 @@ class User_Accounts(object):
         return users, {
             "message" : "registration was successfull"
         }
+
+    def get_user_data(self, username):
+        user = [user for user in users if user["username"] == username]
+        return user
