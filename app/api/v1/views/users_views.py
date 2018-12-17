@@ -14,8 +14,8 @@ def signup_user():
     if not user_data:
         return jsonify({"message":"Data set cannot be empty"})
     email = user_data.get('email').strip()
-    username = user_data.get('username')
-    password = user_data.get('password')
+    username = user_data.get('username').strip()
+    password = user_data.get('password').strip()
 
     res = jsonify(user.register_user(email, username, password))
     return res

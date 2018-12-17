@@ -5,11 +5,14 @@ class User_Accounts(object):
 
     def register_user(self, username, email, password):
         ''' method to register user '''
-        user = {
-            "username" : username,
-            "email" : email,
-            "password" : password
-        }
+        user = dict(
+            username = username,
+            email = email,
+            password = password
+        )
+
 
         users.append(user)
-        return users
+        return users, {
+            "message" : "registration was successfull"
+        }
