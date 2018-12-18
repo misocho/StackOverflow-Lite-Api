@@ -8,6 +8,11 @@ users = [
         "username" : "ben",
         "email" : "karanjaben@gmail.com",
         "password": "dsjknvujfnuihdf"
+    },
+    {
+        "username" : "michelle",
+        "email" : "ndambuki@gmail.com",
+        "password" : "ndambuki245!as"
     }
 ]
 
@@ -32,6 +37,7 @@ class User_Accounts(object):
         user = [user for user in users if user["username"] == username]
         return user
 
-    def edit_username(self, username):
+    def delete_user(self, username):
         user = [user for user in users if user["username"] == username]
-        return user
+        users.remove(user[0])
+        return users

@@ -40,4 +40,5 @@ def edit_username(username):
 
 @auth.route('/user/<username>/delete', methods=['DELETE'])
 def delete_username(username):
-    pass
+   res = make_response(jsonify(user.delete_user(username)))
+   return res
