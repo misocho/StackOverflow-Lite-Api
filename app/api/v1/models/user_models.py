@@ -31,3 +31,7 @@ class User_Accounts(object):
     def get_user_data(self, username):
         user = [user for user in users if user["username"] == username]
         return user
+
+    def edit_username(self, username):
+        user = [user for user in users if user["username"] == username]
+        return user
