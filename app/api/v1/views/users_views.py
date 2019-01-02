@@ -14,11 +14,11 @@ def signup_user():
     user_data = request.get_json()
     if not user_data:
         return jsonify({"message": "Data set cannot be empty"})
-    username = user_data.get('username').strip()
-    email = user_data.get('email').strip()
-    password = user_data.get('password').strip()
+    username = user_data.get('username')
+    email = user_data.get('email')
+    password = user_data.get('password')
 
-    res = jsonify(user.register_user(email, username, password))
+    res = jsonify(user.register_user(username, email, password))
     res.status_code = 201
     return res
 
